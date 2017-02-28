@@ -232,7 +232,7 @@ describe("RuleTester", () => {
                     { code: "var foo = bar;", output: "foo = bar", errors: [{ message: "Bad var.", type: "VariableDeclaration" }] }
                 ]
             });
-        }, /Output is incorrect/);
+        }, /Output is incorrect:\n foo = bar;/);
     });
 
     it("should throw an error when the expected output doesn't match and errors is just a number", () => {
@@ -246,7 +246,7 @@ describe("RuleTester", () => {
                     { code: "var foo = bar;", output: "foo = bar", errors: 1 }
                 ]
             });
-        }, /Output is incorrect/);
+        }, /Output is incorrect:\n foo = bar;/);
     });
 
     it("should throw an error if invalid code specifies wrong type", () => {
